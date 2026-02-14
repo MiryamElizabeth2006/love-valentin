@@ -1,0 +1,117 @@
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-image: url('amor.png');
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    overflow:hidden;
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+.titulo{
+    color:white;
+    text-align:center;
+    font-size:28px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+
+h1{
+    color: aliceblue;
+}
+
+/* SOBRE */
+.envelope{
+    position:relative;
+    width:300px;
+    height:200px;
+    background:#ff4b5c;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+.envelope:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:0;
+    border-left:150px solid transparent;
+    border-right:150px solid transparent;
+    border-bottom:100px solid #ff6b81;
+    transform-origin:top;
+    transition:0.5s;
+}
+
+.envelope.open:before{
+    transform:rotateX(180deg);
+}
+
+/* CARTA */
+.letter{
+    position:absolute;
+    top:20px;
+    left:20px;
+    width:260px;
+    height:160px;
+    background:white;
+    padding:15px;
+    box-sizing:border-box;
+    overflow:hidden;
+    opacity:0;
+    transition:0.5s;
+    border-radius:10px;
+}
+
+.envelope.open .letter{
+    opacity:1;
+    transform:translateY(-120px);
+}
+
+/* TEXTO */
+#text{
+    font-size:14px;
+    color:#000000;
+}
+
+/* CORAZONES */
+.heart{
+    position: fixed;
+    bottom: -50px;
+    font-size: 20px;
+    animation: floatUp linear forwards;
+    color: #ffffff;
+}
+
+@keyframes floatUp{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+button{
+    position:absolute;
+    bottom:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:#fff;
+    color:#ff4b5c;
+    font-weight:bold;
+    cursor:pointer;
+}
